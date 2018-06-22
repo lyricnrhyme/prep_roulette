@@ -9,6 +9,43 @@ For the number 0, give it a background color of green and a font color of white.
 
 A random number will be generated every 5 seconds.*/
 
+
+// var numButton = document.createElement("button");
+// numButton.id = "button";
+// numButton.innerHTML = "Spin for Number";
+// document.body.appendChild(numButton);
+// numButton.addEventListener("click", giveNum);
+
+
+
+var result = document.createElement("div");
+result.id = "result";
+document.body.appendChild(result);
+
+var timer;
+        function myFunction() {
+            timer = setInterval(giveNum, 5000);
+        }
+
+function giveNum() {
+    var randomNum = Math.floor(Math.random()*36);
+    result.innerHTML = randomNum;
+    if (randomNum > 0 && randomNum%2 === 0) {
+        result.style.backgroundColor = "black";
+        result.style.color = "white";
+    } else if (randomNum%2 === 1) {
+        result.style.backgroundColor = "red";
+        result.style.color = "white";
+    } else {
+        result.style.backgroundColor = "green";
+        result.style.color = "white";
+    }
+}
+
+myFunction();
+
+
+
 // Bonus
 // 1) Add some additional styling to your application.
 // 2) Create on and off buttons that will start and stop your application.
