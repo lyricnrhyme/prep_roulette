@@ -24,7 +24,7 @@ document.body.appendChild(result);
 
 var timer;
         function myFunction() {
-            timer = setInterval(giveNum, 5000);
+            timer = setInterval(giveNum, 1000);
         }
 
 function giveNum() {
@@ -42,8 +42,25 @@ function giveNum() {
     }
 }
 
-myFunction();
+var startButton = document.createElement("div");
+startButton.id = "startButton";
+startButton.innerHTML = "START";
+document.body.appendChild(startButton);
+startButton.addEventListener("click", startTimer);
 
+function startTimer() {
+    myFunction();
+}
+
+var stopButton = document.createElement("div");
+stopButton.id = "stopButton";
+stopButton.innerHTML = "STOP";
+document.body.appendChild(stopButton);
+stopButton.addEventListener("click", stopTimer);
+
+function stopTimer() {
+    clearInterval(timer);
+}
 
 
 // Bonus
